@@ -99,42 +99,47 @@ Công cụ này được thiết kế để xử lý các biểu thức logic m�
 Dưới đây là các ví dụ minh họa cách chương trình hoạt động và kết quả đầu ra:
 
 ### Ví dụ 1: Ưu tiên AND trước OR (Tự động)
-
-* **Biểu thức nhập:** `a OR b AND c`
-* **Diễn giải:** Chương trình tự động hiểu biểu thức là $\mathbf{a \lor (b \land c)}$ do **AND** có độ ưu tiên cao hơn **OR**.
-- Nhap so bieu thuc can thuc hien: 1
-- Nhap bieu thuc thu 1 : W = a OR b AND c
-- Bang chan tri:
----------------------------
-a b c W  
-T T T T  
-T T F T  
-T F T T  
-T F F T  
-F T T T  
-F T F F  
-F F T F  
-F F F F  
-=> Contingency!
+* **Nhập vào số biểu thực cần sinh bảng chân trị** `2`
+* **Biểu thức nhập 1:** `a OR b AND c`
+* **Lưu ý:** Chương trình tự động hiểu biểu thức là $\mathbf{a \lor (b \land c)}$ do **AND** có độ ưu tiên cao hơn **OR**.
 
 
-### Ví dụ 2: Sử dụng NOT và XOR
-
-* **Biểu thức nhập:** `(NOT p) AND q XOR (NOT r)`
-* **Lưu ý:** Biểu thức này tuân thủ quy tắc ngoặc cho NOT.
-
-- Nhap so bieu thuc can thuc hien: 1
+* **Biểu thức nhập 2:** `(NOT p) AND q XOR (NOT r)`
+* **Lưu ý:** Biểu thức này tuân thủ quy tắc ngoặc cho **NOT**.
+--------------------------------------- 
+  
+- Nhap so bieu thuc can thuc hien: 2
 - Nhap bieu thuc thu 1 : W = a OR b AND c
 - Bang chan tri:
 
----------------------------------------  
-a b c W  
-T T T T  
-T T F T  
-T F T T  
-T F F T  
-F T T T  
-F T F F  
-F F T F  
-F F F F  
+| a | b | c | W |
+| :--- | :--- | :--- | :--- |
+| T | T | T | T | 
+| T | T | F | T | 
+| T | F | T | T | 
+| T | F | F | T | 
+| F | T | T | T | 
+| F | T | F | F | 
+| F | F | T | F | 
+| F | F | F | F | 
+
 => Contingency!
+--------------------------------------- 
+
+- Nhap bieu thuc thu 2 : W = (NOT p) AND q XOR (NOT r)
+- Bang chan tri:
+
+ 
+| p | q | r | W |
+| :--- | :--- | :--- | :--- |
+| T | T | T | F | 
+| T | T | F | T | 
+| T | F | T | F | 
+| T | F | F | T | 
+| F | T | T | T | 
+| F | T | F | F | 
+| F | F | T | F | 
+| F | F | F | T | 
+
+=> Contingency!
+--------------------------------------- 
